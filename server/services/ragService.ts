@@ -68,7 +68,6 @@ export const ask = async (userQuestion: string): Promise<string> => {
     // 4. Generate answer using Gemini
     const response = await askGemini("gemini-2.5-flash", userQuestion, systemPrompt);
 
-    // @ts-ignore - Handle Gemini SDK response structure
     const answer = response.candidates?.[0]?.content?.parts?.[0]?.text || "I'm sorry, I couldn't generate an answer.";
 
     return answer;

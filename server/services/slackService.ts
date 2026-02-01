@@ -1,7 +1,10 @@
 import { storeInDB } from "./dbService";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const SLACK_CHANNELS = ["lab-notes", "engineering", "offtopic"];
-const SLACK_API_BASE_URL = "https://lev-boots-slack-api.jona-581.workers.dev";
+const SLACK_API_BASE_URL = process.env.SLACK_API_BASE_URL;
 
 /**
  * Fetches messages from a Slack channel with pagination.
