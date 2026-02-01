@@ -28,7 +28,7 @@ export const askGemini = async (model: string, userPrompt: string, systemPrompt:
 export const embedText = async (text: string, outputDimension: number = 768, taskType: string = "RETRIEVAL_DOCUMENT"): Promise<number[]> => {
     try {
         const response = await gemini.models.embedContent({
-            model: "text-embedding-004",
+            model: "gemini-embedding-001",
             contents: [{ parts: [{ text }] }],
             config: {
                 outputDimensionality: outputDimension,
